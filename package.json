@@ -1,5 +1,5 @@
 {
-  "name": "musixmatch",
+  "name": "musicmatch",
   "version": "0.0.1",
   "description": "musixmatch community api",
   "main": "./libs/index.js",
