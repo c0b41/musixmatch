@@ -61,7 +61,11 @@ musixmatch.prototype.exec = function(next){
 		if(err){
 			next(err,null);
 		}else{
-			next(null,data);
+			if(this.method =="xml"){
+				next(null,data);
+			}else{
+				next(null,JSON.parse(data));
+			}
 		}
 
 	});
@@ -74,4 +78,3 @@ musixmatch.prototype.exec = function(next){
 
 
 module.exports=exports=musixmatch;
-

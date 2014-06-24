@@ -1,120 +1,37 @@
-var musixmatch =require('./libs/index.js')({usertoken:"1385437af7222f2b5ec105bf0b456fed7bdf84066ad62b25",app_id:"community-app-v1.0",method:"json"});
+var music =require('./libs/index.js')();
 var expect = require('expect.js');
 
-	describe('artist search Test!!!...', function(){
+	describe('Musixmatch Test!!!...', function(){
 
-		it('Test :1 ', function(done){
+		it('track search ', function(done){
 
-			musixmatch.artist({q:"user",c:10,p:0,min:1,max:48}).exec(function(err,data){
+			music.track({q:"Tove lo",page:1,page_size:10}).exec(function(err, data){
 				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.searchresults.icons).to.have.length(10);
-				expect(data.searchresults.searchTerms).to.eql('user');	
-				expect(data.searchresults.icons[0].id).to.eql(172625);	
-				expect(data.searchresults.icons[0].image).to.eql('https://cdn2.musixmatch.com/data/icons/ios-7-icons/50/user_male-48.png');
-				expect(data.searchresults.icons[0].tags).to.be.an('object');
+				expect(data).to.be.an('object'); 
+				expect(data.message.body.track_list[0].track.track_isrc).to.eql('SE3NM1300101');	
+				expect(data.message.body.track_list[0].track.album_name).to.eql('Habits (Stay High)');
+				expect(data.message.body.track_list[0].track.artist_mbid).to.eql('56756959-1e78-429c-b897-e1d056cb0225');
+				expect(data.message.body.track_list[0].track.album_coverart_100x100).to.eql('http://static.musixmatch.com/images/albums/1/8/4/5/3/7/26735481.jpg');
 				done();
 			});
 
 		});
 
+		it('artist search ', function(done){
 
-		it('Test :2 ', function(done){
-
-			musixmatch.track({q:"home",c:20,p:0,min:1,max:48}).exec(function(err,data){
+			music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(err, data){
 				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.searchresults.icons).to.have.length(20);
-				expect(data.searchresults.searchTerms).to.eql('home');	
-				expect(data.searchresults.icons[0].id).to.eql(126572);	
-				expect(data.searchresults.icons[0].image).to.eql('https://cdn4.musixmatch.com/data/icons/pictype-free-vector-icons/16/home-48.png');
-				expect(data.searchresults.icons[0].tags).to.be.an('object');
+				expect(data).to.be.an('object'); 
+				expect(data.message.body.artist_list[0].artist.artist_id).to.eql(24612190);	
+				expect(data.message.body.artist_list[0].artist.artist_name).to.eql('Tove Lo');
+				expect(data.message.body.artist_list[0].artist.artist_edit_url).to.eql('https://community.musixmatch.com/artist/Tove-Lo?utm_source=application&utm_campaign=api&utm_medium=musixmatch-community');
+				expect(data.message.body.artist_list[0].artist.updated_time).to.eql('2014-03-28T19:32:22Z');
 				done();
 			});
 
 		});
 
-		it('Test :3 ', function(done){
-
-			musixmatch.search({q:"play",c:5,p:0}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.searchresults.icons).to.have.length(5);
-				expect(data.searchresults.searchTerms).to.eql('play');	
-				expect(data.searchresults.icons[1].id).to.eql(199499);	
-				expect(data.searchresults.icons[1].image).to.eql('https://cdn3.musixmatch.com/data/icons/social-circle/512/social_4-512.png');
-				expect(data.searchresults.icons[1].tags).to.be.an('object');
-				done();
-			});
-
-		});
-
-		it('Test :4 ', function(done){
-
-			musixmatch.search({q:"trash"}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.searchresults.icons).to.have.length(16);
-				expect(data.searchresults.searchTerms).to.eql('trash');	
-				expect(data.searchresults.icons[15].id).to.eql(171207);	
-				expect(data.searchresults.icons[15].image).to.eql('https://cdn2.musixmatch.com/data/icons/large-svg-icons-part-3/512/recycling_recycle_recyclin-512.png');
-				expect(data.searchresults.icons[15].tags).to.be.an('object');
-				done();
-			});
-
-		});
-
-	});
-
-	describe('İnfo Test!!!...', function(){
-		it('Test :1 ', function(done){
-			musixmatch.info({id:172625}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.icon.author).to.eql('Visual Pharm');
-				expect(data.icon.iconset).to.eql('iOS 7 icons');
-				expect(data.icon.authorwebsite).to.eql('http://icons8.com/');
-				done();
-			});
-
-		});
-
-		it('Test :2 ', function(done){
-			musixmatch.info({id:126572}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.icon.author).to.eql('Timothy Miller');
-				expect(data.icon.iconset).to.eql('Pictype Free Vector Icons');
-				expect(data.icon.authorwebsite).to.eql(null);
-				done();
-			});
-
-		});
-
-		it('Test :3 ', function(done){
-			musixmatch.info({id:199499}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.icon.author).to.eql('Vectorgraphit .');
-				expect(data.icon.iconset).to.eql('Social circle');
-				expect(data.icon.authorwebsite).to.eql(null);
-				done();
-			});
-
-		});
-
-		it('Test :4 ', function(done){
-			musixmatch.info({id:171207}).exec(function(err,data){
-				expect(err).to.exist;
-				expect(data).to.be.an('object');
-				expect(data.icon.author).to.eql('Victor Ivlichev');
-				expect(data.icon.iconset).to.eql('Large SVG Icons Part 3');
-				expect(data.icon.authorwebsite).to.eql(null);
-				done();
-			});
-
-		});
-
+		
 	});
 
 
