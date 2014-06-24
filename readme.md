@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cobaimelan/musixmatch.png?branch=master)](https://travis-ci.org/cobaimelan/musixmatch)
+
 NodeJS musixmatch community api
 
 ### Install
