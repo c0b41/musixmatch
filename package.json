@@ -16,9 +16,6 @@
     "seven": "0.0.4",
     "query-parse": "~0.1.1"
   },
-  "engines": [
-    "node >= 0.8.0"
-  ],
   "bugs": {
     "url": "https://github.com/cobaimelan/musixmatch/issues"
   },
