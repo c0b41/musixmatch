@@ -1,6 +1,6 @@
 {
   "name": "musicmatch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "musixmatch community api",
   "main": "./libs/index.js",
   "repository": {
@@ -27,8 +27,8 @@
   },
   "author": "Ayhan Kuru <ayhankuru@yandex.com.tr>",
   "devDependencies": {
-    "mocha": "~1.17.1",
-    "expect.js": "~0.2.0"
+    "expect.js": "~0.2.0",
+    "mocha": "~1.17.1"
   },
   "homepage": "https://github.com/cobaimelan/musixmatch"
 }

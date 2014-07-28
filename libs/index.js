@@ -50,6 +50,22 @@ musixmatch.prototype.track = function(str){
 	
 }
 
+
+/**
+ *  track get
+ * @param {str}  object
+ */
+
+musixmatch.prototype.lyrics = function(str){
+	if( typeof str =="object" ){
+		this.url ="https://community.musixmatch.com/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
+	}else{
+		this.url=null;
+	}
+	return this;
+	
+}
+
 /**
  *  exec request
  * @param {next}  function

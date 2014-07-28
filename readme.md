@@ -9,7 +9,7 @@ $ npm install musicmatch
 ```
 
 
-#### Artist Search
+#### Usage
 
 ```js
 
@@ -25,12 +25,7 @@ music =  require('musicmatch')();
 #### Artist Search
 
 ```js
-
-musicmatch = require('musicmatch')
-
-music =musicmatch();
-
-music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(error, result){
+music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(err, data){
 
     
 
@@ -43,11 +38,21 @@ music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(error, result){
 
 ```js
 
-music.track({q_track_artist:"Habits",page:1,page_size:30}).exec(function(error, result){
+music.track({q_track_artist:"Habits",page:1,page_size:30}).exec(function(err, data){
 
     
 
 });
 ```
 
+#### Get Lyrics
 
+
+```js
+
+music.lyrics({commontrack_vanity_id:"Tove-Lo/Habits",page:1,page_size:30}).exec(function(err, data){
+
+    
+
+});
+```
