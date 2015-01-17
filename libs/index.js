@@ -1,5 +1,5 @@
 /* @Name musixmatch
-*  @Version 0.0.0
+*  @Version 0.0.4
 *  @author Cobaimelan
 */
 
@@ -27,7 +27,7 @@ function musixmatch(obj){
  */
 musixmatch.prototype.artist = function(str){
 	if( typeof str =="object" ){
-		this.url ="https://community.musixmatch.com/ws/1.1/artist.search?app_id="+this.app_id+"&usertoken="+this.usertoken+"&format="+this.method+"&part=artist_image&s_artist_ranking=desc&didyoumean=1&"+qp.toString(str);
+		this.url ="https://www.musixmatch.com/ws/1.1/artist.search?app_id="+this.app_id+"&usertoken="+this.usertoken+"&format="+this.method+"&part=artist_image&s_artist_ranking=desc&didyoumean=1&"+qp.toString(str);
 	}else{
 		this.url=null;
 	}
@@ -42,7 +42,7 @@ musixmatch.prototype.artist = function(str){
 
 musixmatch.prototype.track = function(str){
 	if( typeof str =="object" ){
-		this.url ="https://community.musixmatch.com/ws/1.1/track.search?app_id="+this.app_id+"&f_stop_words=1&s_track_rating=desc&g_common_track=1&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
+		this.url ="https://www.musixmatch.com/ws/1.1/track.search?app_id="+this.app_id+"&f_stop_words=1&s_track_rating=desc&g_common_track=1&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
 	}else{
 		this.url=null;
 	}
@@ -58,7 +58,7 @@ musixmatch.prototype.track = function(str){
 
 musixmatch.prototype.lyrics = function(str){
 	if( typeof str =="object" ){
-		this.url ="https://community.musixmatch.com/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
+		this.url ="https://www.musixmatch.com/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
 	}else{
 		this.url=null;
 	}

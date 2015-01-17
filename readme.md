@@ -1,4 +1,4 @@
-[![Build Status](http://img.shields.io/travis/cobaimelan/musixmatch.svg?style=flat)](https://travis-ci.org/cobaimelan/musixmatch)
+[![Build Status](http://img.shields.io/travis/ayhankuru/musixmatch.svg?style=flat-square)](https://travis-ci.org/ayhankuru/musixmatch)
 
  
 NodeJS musixmatch community api
