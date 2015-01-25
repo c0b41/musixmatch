@@ -27,9 +27,12 @@ music =  require('musicmatch')();
 #### Artist Search
 
 ```js
-music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(err, data){
+music.artist({q:"Tove lo",page:1,page_size:10}).then(function(data){
 
     
+
+}).catch(function(err){
+	
 
 });
 
@@ -40,10 +43,13 @@ music.artist({q:"Tove lo",page:1,page_size:10}).exec(function(err, data){
 
 ```js
 
-music.track({q_track_artist:"Habits",page:1,page_size:30}).exec(function(err, data){
+music.track({q_track_artist:"Habits",page:1,page_size:30}).then(function(data){
 
     
 
+}).catch(function(err){
+	
+	
 });
 ```
 
@@ -52,9 +58,16 @@ music.track({q_track_artist:"Habits",page:1,page_size:30}).exec(function(err, da
 
 ```js
 
-music.lyrics({commontrack_vanity_id:"Tove-Lo/Habits",page:1,page_size:30}).exec(function(err, data){
+music.lyrics({commontrack_vanity_id:"Tove-Lo/Habits",page:1,page_size:30}).then(function(data){
 
     
 
+}).catch(function(err){
+	
+	
 });
 ```
+
+
+
+##### params list soon ..
