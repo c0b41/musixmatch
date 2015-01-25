@@ -1,11 +1,13 @@
 /* @Name musixmatch
-*  @Version 0.0.4
-*  @author Cobaimelan
+*  @Version 0.1.0
+*  @author Ayhan Kuru
 */
 
 // required packages..
-var seven =require('seven')();
+var Promise = require("bluebird");
+var  rp = require('request-promise');
 var qp = require('query-parse');
+var url ="https://www.musixmatch.com";
 
 /**
  * new musixmatch
@@ -23,74 +25,69 @@ function musixmatch(obj){
 
 /**
  * search artist
- * @param {str} object
+ * @param {params} object
  */
-musixmatch.prototype.artist = function(str){
-	if( typeof str =="object" ){
-		this.url ="https://www.musixmatch.com/ws/1.1/artist.search?app_id="+this.app_id+"&usertoken="+this.usertoken+"&format="+this.method+"&part=artist_image&s_artist_ranking=desc&didyoumean=1&"+qp.toString(str);
-	}else{
-		this.url=null;
-	}
-	return this;
-	
+musixmatch.prototype.artist = function(params){
+	var uri =url+"/ws/1.1/artist.search?app_id="+this.app_id+"&usertoken="+this.usertoken+"&format="+this.method+"&part=artist_image&s_artist_ranking=desc&didyoumean=1&"+qp.toString(params);
+	var _self =this;
+	return new Promise(function (resolve, reject) {
+		
+		rq(uri).then(function(data){
+			
+			if(self.method=="json") resolve(JSON.parse(data));
+			else resolve(data);
+
+		}).catch(function(err){
+			reject(err);
+		});
+
+	});
 }
+
 
 /**
  *  track info
- * @param {str}  object
+ * @param {params}  object
  */
 
-musixmatch.prototype.track = function(str){
-	if( typeof str =="object" ){
-		this.url ="https://www.musixmatch.com/ws/1.1/track.search?app_id="+this.app_id+"&f_stop_words=1&s_track_rating=desc&g_common_track=1&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
-	}else{
-		this.url=null;
-	}
-	return this;
-	
-}
+musixmatch.prototype.track = function(params){
+	var uri =url+"/ws/1.1/track.search?app_id="+this.app_id+"&f_stop_words=1&s_track_rating=desc&g_common_track=1&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(params);
+	var _self =this;
+	return new Promise(function (resolve, reject) {
+		
+		rq(uri).then(function(data){
+			
+			if(self.method=="json") resolve(JSON.parse(data));
+			else resolve(data);
 
+		}).catch(function(err){
+			reject(err);
+		});
+
+	});
+}
 
 /**
  *  track get
- * @param {str}  object
+ * @param {params}  object
  */
 
-musixmatch.prototype.lyrics = function(str){
-	if( typeof str =="object" ){
-		this.url ="https://www.musixmatch.com/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(str);
-	}else{
-		this.url=null;
-	}
-	return this;
-	
-}
+musixmatch.prototype.lyrics = function(params){
+	var uri =url+"/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(params);
+	var _self =this;
+	return new Promise(function (resolve, reject) {
+		
+		rq(uri).then(function(data){
+			
+			if(self.method=="json") resolve(JSON.parse(data));
+			else resolve(data);
 
-/**
- *  exec request
- * @param {next}  function
- */
-musixmatch.prototype.exec = function(next){
-
-	if(this.url !== null){
-		seven.play(this.url,function(err,data){
-		if(err){
-			next(err,null);
-		}else{
-			if(this.method =="xml"){
-				next(null,data);
-			}else{
-				next(null,JSON.parse(data));
-			}
-		}
+		}).catch(function(err){
+			reject(err);
+		});
 
 	});
-
-	}else{
-		console.error('function params error!');
-	}
+	
 }
-
-
 
 module.exports=exports=musixmatch;
