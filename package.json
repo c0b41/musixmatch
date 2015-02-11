@@ -1,6 +1,6 @@
 {
   "name": "musicmatch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "musixmatch community api",
   "main": "./libs/index.js",
   "repository": {
@@ -15,7 +15,7 @@
   "dependencies": {
     "query-parse": "~0.1.1",
     "bluebird": "~2.9.1",
-    "request-promise": "~0.3.3"
+    "request-promise": "~0.4.0"
   },
   "bugs": {
     "url": "https://github.com/cobaimelan/musixmatch/issues"
