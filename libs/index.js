@@ -32,9 +32,9 @@ musixmatch.prototype.artist = function(params){
 	var _self =this;
 	return new Promise(function (resolve, reject) {
 		
-		rq(uri).then(function(data){
+		rp(uri).then(function(data){
 			
-			if(self.method=="json") resolve(JSON.parse(data));
+			if(_self.method=="json") resolve(JSON.parse(data));
 			else resolve(data);
 
 		}).catch(function(err){
@@ -55,9 +55,9 @@ musixmatch.prototype.track = function(params){
 	var _self =this;
 	return new Promise(function (resolve, reject) {
 		
-		rq(uri).then(function(data){
+		rp(uri).then(function(data){
 			
-			if(self.method=="json") resolve(JSON.parse(data));
+			if(_self.method=="json") resolve(JSON.parse(data));
 			else resolve(data);
 
 		}).catch(function(err){
@@ -77,9 +77,9 @@ musixmatch.prototype.lyrics = function(params){
 	var _self =this;
 	return new Promise(function (resolve, reject) {
 		
-		rq(uri).then(function(data){
+		rp(uri).then(function(data){
 			
-			if(self.method=="json") resolve(JSON.parse(data));
+			if(_self.method=="json") resolve(JSON.parse(data));
 			else resolve(data);
 
 		}).catch(function(err){
