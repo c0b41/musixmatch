@@ -1,7 +1,7 @@
 var music =require('./libs/index.js')();
 var expect = require('expect.js');
 
-	describe('Musixmatch Test!!!...', function(){
+describe('Musixmatch Test!!!...', function(){
 
 		it('Artist search ', function(done){
 
@@ -36,35 +36,7 @@ var expect = require('expect.js');
 		});
 
 
-		it('Get lyrics ', function(done){
-
-			music.lyrics({commontrack_vanity_id:"Tove-Lo/Habits",page:1,page_size:30}).then(function(data){
-				
-				expect(data).to.be.an('object'); 
-				expect(data.message.body.lyrics.lyrics_id).to.eql(9479786);	
-				expect(data.message.body.lyrics.lyrics_language).to.eql('en');
-				expect(data.message.body.lyrics.writer_list[0].writer.writer_id).to.eql(41291);
-				done();
-			},function(err){
-				expect(err).to.exist;
-				done();
-			});
-
-		});
-
-		it('experimental test ', function(done){
-
-			music.track({q_track_artist:"Chet Faker - Gold",page:1,page_size:30}).then(function(data){
-				expect(data).to.be.an('object'); 
-				console.log(data);
-				done();
-			},function(err){
-				expect(err).to.exist;
-				done();
-			});
-
-		});
 		
-	});
+});
 
 
