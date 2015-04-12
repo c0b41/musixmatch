@@ -13,9 +13,10 @@
   ],
   "license": "BSD-2-Clause",
   "dependencies": {
-    "query-parse": "~0.1.1",
     "bluebird": "~2.9.1",
-    "request-promise": "~0.4.0"
+    "extend": "^2.0.0",
+    "got-promise": "^2.0.0",
+    "query-parse": "~0.1.1"
   },
   "bugs": {
     "url": "https://github.com/cobaimelan/musixmatch/issues"

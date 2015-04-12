@@ -51,6 +51,19 @@ var expect = require('expect.js');
 			});
 
 		});
+
+		it('experimental test ', function(done){
+
+			music.track({q_track_artist:"Chet Faker - Gold",page:1,page_size:30}).then(function(data){
+				expect(data).to.be.an('object'); 
+				console.log(data);
+				done();
+			},function(err){
+				expect(err).to.exist;
+				done();
+			});
+
+		});
 		
 	});
 

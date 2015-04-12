@@ -4,10 +4,11 @@
 */
 
 // required packages..
-var Promise = require("bluebird");
-var  rp = require('request-promise');
+var got = require('got-promise').promise;
 var qp = require('query-parse');
-var url ="https://www.musixmatch.com";
+var extend =require('extend');
+var methods = require('./methods.js');
+
 
 /**
  * new musixmatch
@@ -16,78 +17,25 @@ var url ="https://www.musixmatch.com";
 function musixmatch(obj){
 	if (!(this instanceof musixmatch)) return new musixmatch(obj);
 	var obj =obj ? obj : {};
-  	this.usertoken =obj.usertoken ? obj.usertoken :"1385437af7222f2b5ec105bf0b456fed7bdf84066ad62b25";
-  	this.app_id = obj.app_id ? obj.app_id : "community-app-v1.0";
-  	this.method = obj.method ? obj.method : "json"; 
+	this._datas={};
+  	this._datas.usertoken =obj.usertoken ? obj.usertoken :"17ba9885eca2ba89bc743c4d80c08de76dc2ab78a98ac80a";
+  	this._datas.app_id = obj.app_id ? obj.app_id : "community-app-v1.0";
+  	this._datas.format = obj.format ? obj.format : "json"; 
+  	this.uri="https://www.musixmatch.com/ws/1.1/";
 
-  	return this;
 }
 
-/**
- * search artist
- * @param {params} object
- */
-musixmatch.prototype.artist = function(params){
-	var uri =url+"/ws/1.1/artist.search?app_id="+this.app_id+"&usertoken="+this.usertoken+"&format="+this.method+"&part=artist_image&s_artist_ranking=desc&didyoumean=1&"+qp.toString(params);
-	var _self =this;
-	return new Promise(function (resolve, reject) {
-		
-		rp(uri).then(function(data){
-			
-			if(_self.method=="json") resolve(JSON.parse(data));
-			else resolve(data);
 
-		}).catch(function(err){
-			reject(err);
+methods.forEach(function(entry) {
+    musixmatch.prototype[entry.method] = function query(params){
+		var params = extend(this._datas,params);
+		var uri = this.uri+entry.name+'?'+qp.toString(params);		
+		return got(uri).then(function (res) {
+		     if(this._datas.format = "json") return JSON.parse(res.body);
+		     else return res.body;
 		});
+	}
+});
 
-	});
-}
-
-
-/**
- *  track info
- * @param {params}  object
- */
-
-musixmatch.prototype.track = function(params){
-	var uri =url+"/ws/1.1/track.search?app_id="+this.app_id+"&f_stop_words=1&s_track_rating=desc&g_common_track=1&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(params);
-	var _self =this;
-	return new Promise(function (resolve, reject) {
-		
-		rp(uri).then(function(data){
-			
-			if(_self.method=="json") resolve(JSON.parse(data));
-			else resolve(data);
-
-		}).catch(function(err){
-			reject(err);
-		});
-
-	});
-}
-
-/**
- *  track get
- * @param {params}  object
- */
-
-musixmatch.prototype.lyrics = function(params){
-	var uri =url+"/ws/1.1/track.lyrics.get?app_id=community-app-v1.0&usertoken="+this.usertoken+"&format="+this.method+"&"+qp.toString(params);
-	var _self =this;
-	return new Promise(function (resolve, reject) {
-		
-		rp(uri).then(function(data){
-			
-			if(_self.method=="json") resolve(JSON.parse(data));
-			else resolve(data);
-
-		}).catch(function(err){
-			reject(err);
-		});
-
-	});
-	
-}
 
 module.exports=exports=musixmatch;
