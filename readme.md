@@ -15,7 +15,7 @@ $ npm install musicmatch
 
 ```js
 
-music = require('musicmatch')({usertoken:"",method:"",appid:""});
+music = require('musicmatch')({usertoken:"",format:"",appid:""});
 
 // or
 

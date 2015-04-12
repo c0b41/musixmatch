@@ -29,9 +29,10 @@ function musixmatch(obj){
 methods.forEach(function(entry) {
     musixmatch.prototype[entry.method] = function query(params){
 		var params = extend(this._datas,params);
-		var uri = this.uri+entry.name+'?'+qp.toString(params);		
+		var uri = this.uri+entry.name+'?'+qp.toString(params);
+		var that = this;		
 		return got(uri).then(function (res) {
-		     if(this._datas.format = "json") return JSON.parse(res.body);
+		     if(that._datas.format == "json") return JSON.parse(res.body);
 		     else return res.body;
 		});
 	}
