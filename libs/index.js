@@ -21,7 +21,7 @@ function musixmatch(obj){
   	this._datas.usertoken =obj.usertoken ? obj.usertoken :"17ba9885eca2ba89bc743c4d80c08de76dc2ab78a98ac80a";
   	this._datas.app_id = obj.app_id ? obj.app_id : "community-app-v1.0";
   	this._datas.format = obj.format ? obj.format : "json"; 
-  	this.uri="https://www.musixmatch.com/ws/1.1/";
+  	this.uri="https://proxy.piratenpartij.nl/www.musixmatch.com/ws/1.1/";
 
 }
 
