@@ -4,7 +4,7 @@
 */
 
 // required packages..
-var got = require('got-promise').promise;
+var got = require('got-promise');
 var qp = require('query-parse');
 var extend =require('extend');
 var methods = require('./methods.js');
