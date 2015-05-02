@@ -31,7 +31,7 @@ methods.forEach(function(entry) {
 		var params = extend(this._datas,params);
 		var uri = this.uri+entry.name+'?'+qp.toString(params);
 		var that = this;		
-		return got("http://98ec9ed4.ngrok.io/json?url="+encodeURIComponent(uri)).then(function (res) {
+		return got("https://musixmatchh-proxy.herokuapp.com/json?url="+encodeURIComponent(uri)).then(function (res) {
 		     if(that._datas.format == "json") return JSON.parse(res.body);
 		     else return res.body;
 		});
