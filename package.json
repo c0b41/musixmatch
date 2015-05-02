@@ -15,7 +15,7 @@
   "dependencies": {
     "bluebird": "~2.9.1",
     "extend": "^2.0.0",
-    "got-promise": "^2.0.0",
+    "got-promise": "^3.0.1",
     "query-parse": "~0.1.1"
   },
   "bugs": {
