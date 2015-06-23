@@ -1,6 +1,6 @@
 {
   "name": "musicmatch",
-  "version": "0.2.3",
+  "version": "0.2.5",
   "description": "musixmatch community api",
   "main": "./libs/index.js",
   "repository": {
@@ -11,23 +11,24 @@
     "musixmatch",
     "api"
   ],
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "dependencies": {
-    "bluebird": "~2.9.1",
-    "extend": "^2.0.0",
-    "got-promise": "^3.0.1",
+    "bluebird": "^2.9.30",
+    "extend": "^2.0.1",
+    "got-promise": "^4.1.0",
     "query-parse": "~0.1.1"
   },
   "bugs": {
     "url": "https://github.com/cobaimelan/musixmatch/issues"
   },
   "scripts": {
-    "test": "iojs node_modules/mocha/bin/mocha test.js --reporter spec --timeout 15000"
+    "test": "mocha --harmony test.js --reporter spec --timeout 15000 --require mocha-clean"
   },
   "author": "Ayhan Kuru <ayhankuru@yandex.com.tr>",
   "devDependencies": {
-    "expect.js": "~0.2.0",
-    "mocha": "~1.17.1"
+    "expect.js": "^0.3.1",
+    "mocha": "^2.2.5",
+    "mocha-clean": "^0.4.0"
   },
   "homepage": "https://github.com/cobaimelan/musixmatch"
 }

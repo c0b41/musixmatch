@@ -1,7 +1,7 @@
 var music =require('./libs/index.js')();
  
-music.chartTracks({page:1,page_size:3,country:"tr",f_has_lyrics:1}).then(function(data){
+music.trackSearch({q:"Tove lo",page:1,page_size:10}).then(function(data){
 		console.log(data);
 }).catch(function(err){
-		console.log(err);
-})
+		console.log(err.stack);
+});
