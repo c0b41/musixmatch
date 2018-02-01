@@ -1,5 +1,5 @@
 /* @Name musixmatch
-*  @Version 0.2.4
+*  @Version 0.2.6
 *  @author Ayhan Kuru
 */
 
@@ -18,10 +18,9 @@ function musixmatch(obj){
 	if (!(this instanceof musixmatch)) return new musixmatch(obj);
 	var obj =obj ? obj : {};
 	this._datas={};
-  	this._datas.guid =obj.guid ? obj.guid :"728cbca6-600f-4b40-970d-064763544f28";
-  	this._datas.app_id = obj.app_id ? obj.app_id : "community-app-v1.0";
+  	this._datas.apikey =obj.apikey ? obj.apikey :"";
   	this._datas.format = obj.format ? obj.format : "json"; 
-  	this.uri="https://www.musixmatch.com/ws/1.1/";
+  	this.uri="http://api.musixmatch.com/ws/1.1/";
 
 }
 
