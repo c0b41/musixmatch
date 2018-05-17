@@ -1,34 +1,33 @@
 {
   "name": "musicmatch",
   "version": "0.2.6",
-  "description": "musixmatch community api",
-  "main": "./libs/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:cobaimelan/musixmatch.git"
+  "description": "musicmatch api",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "babel ./lib --out-dir ./dist"
   },
   "keywords": [
-    "musixmatch",
+    "musicmatch",
     "api"
   ],
-  "license": "MIT",
+  "author": "c0b41",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1"
+  },
   "dependencies": {
-    "bluebird": "^2.9.30",
-    "extend": "^2.0.1",
-    "got-promise": "^4.1.0",
-    "query-parse": "~0.1.1"
+    "got": "^8.3.1",
+    "query-parse": "^2.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:c0b41/musixmatch.git"
   },
   "bugs": {
-    "url": "https://github.com/cobaimelan/musixmatch/issues"
+    "url": "https://github.com/c0b41/musixmatch/issues"
   },
-  "scripts": {
-    "test": "mocha --harmony test.js --reporter spec --timeout 15000 --require mocha-clean"
-  },
-  "author": "Ayhan Kuru <ayhankuru@yandex.com.tr>",
-  "devDependencies": {
-    "expect.js": "^0.3.1",
-    "mocha": "^2.2.5",
-    "mocha-clean": "^0.4.0"
-  },
-  "homepage": "https://github.com/cobaimelan/musixmatch"
+  "homepage": "https://github.com/c0b41/musixmatch"
 }

@@ -1,8 +1,11 @@
-[![Travis Build Status](http://img.shields.io/travis/ayhankuru/musixmatch.svg?style=flat-square)](https://travis-ci.org/ayhankuru/musixmatch) [![Circle Build Status](https://img.shields.io/circleci/project/ayhankuru/musixmatch.svg?style=flat-square)](https://circleci.com/gh/ayhankuru/musixmatch) [![Appveyor Build Status](https://img.shields.io/appveyor/ci/ayhankuru/musixmatch.svg?style=flat-square)](https://ci.appveyor.com/project/ayhankuru/musixmatch) [![Build Status](https://img.shields.io/david/ayhankuru/musixmatch.svg?style=flat-square)](https://david-dm.org/ayhankuru/musixmatch) [![io.js supported](https://img.shields.io/badge/io.js-supported-green.svg?style=flat-square)](https://iojs.org)
+# musicmatch 
+
+![download-count](https://img.shields.io/npm/dm/musicmatch.svg)
+![dev-deps](https://david-dm.org/c0b41/musicmatch.svg)
 
 
  
-NodeJS musixmatch community api
+NodeJS musicmatch api
 
 ### Install
 
@@ -15,7 +18,7 @@ $ npm install musicmatch
 
 ```js
 
-music = require('musicmatch')({usertoken:"",format:"",appid:""});
+music = require('musicmatch')({apikey:""});
 
 // or
 
