@@ -61,10 +61,10 @@ music =  require('musicmatch')();
 
 ```js
 
-music.chartArtists({page:1,page_size:3,country:"tr"})
-.then(function(data){
+music.chartArtists({page:1, page_size:3, country:"tr"})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -82,10 +82,10 @@ music.chartArtists({page:1,page_size:3,country:"tr"})
 
 ```js
 
-music.chartTracks({page:1,page_size:3,country:"tr",f_has_lyrics:1})
-.then(function(data){
+music.chartTracks({page:1, page_size:3, country:"tr", f_has_lyrics:1})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -112,10 +112,10 @@ music.chartTracks({page:1,page_size:3,country:"tr",f_has_lyrics:1})
 
 ```js
 
-music.trackSearch({q:"Chet Faker - Gold "page:1,page_size:3})
-.then(function(data){
+music.trackSearch({q:"Chet Faker - Gold", page:1, page_size:3})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -134,9 +134,9 @@ music.trackSearch({q:"Chet Faker - Gold "page:1,page_size:3})
 ```js
 
 music.track({track_id:15445219})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -158,9 +158,9 @@ music.track({track_id:15445219})
 ```js
 
 music.trackSubtitle({track_id:15445219})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -180,9 +180,9 @@ music.trackSubtitle({track_id:15445219})
 ```js
 
 music.trackLyrics({track_id:15445219})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -199,9 +199,9 @@ music.trackLyrics({track_id:15445219})
 ```js
 
 music.trackSnippet({track_id:15445219})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -217,10 +217,10 @@ music.trackSnippet({track_id:15445219})
 
 ```js
 
-music.trackLyricsAdd({track_id:15445219,lyrics_body:"example lyrics"})
-.then(function(data){
+music.trackLyricsAdd({track_id:15445219, lyrics_body:"example lyrics"})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -238,10 +238,10 @@ music.trackLyricsAdd({track_id:15445219,lyrics_body:"example lyrics"})
 
 ```js
 
-music.trackLyricsFeedback({track_id:15445219,lyrics_id:4193713,feedback:"wrong_verses"})
-.then(function(data){
+music.trackLyricsFeedback({track_id:15445219, lyrics_id:4193713, feedback:"wrong_verses"})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -257,10 +257,10 @@ music.trackLyricsFeedback({track_id:15445219,lyrics_id:4193713,feedback:"wrong_v
 
 ```js
 
-music.matcherLyrics({q_track:"sexy and i know it",q_artist:"lmfao"})
-.then(function(data){
+music.matcherLyrics({q_track:"sexy and i know it", q_artist:"lmfao"})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -280,10 +280,10 @@ music.matcherLyrics({q_track:"sexy and i know it",q_artist:"lmfao"})
 
 ```js
 
-music.matcherTrack({q_artist:"eminem"q_track:"lose yourself"})
-.then(function(data){
+music.matcherTrack({q_artist:"eminem", q_track:"lose yourself"})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -302,10 +302,10 @@ music.matcherTrack({q_artist:"eminem"q_track:"lose yourself"})
 
 ```js
 
-music.matcherSubtitle({q_track:"sexy and i know it",q_artist:"lmfao",f_subtitle_length:200})
-.then(function(data){
+music.matcherSubtitle({q_track:"sexy and i know it", q_artist:"lmfao", f_subtitle_length:200})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -323,9 +323,9 @@ music.matcherSubtitle({q_track:"sexy and i know it",q_artist:"lmfao",f_subtitle_
 ```js
 
 music.artist({artist_id:118})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -346,10 +346,10 @@ music.artist({artist_id:118})
 
 ```js
 
-music.artistSearch({q_artist:"prodigy",page_size:5})
-.then(function(data){
+music.artistSearch({q_artist:"prodigy", page_size:5})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -372,10 +372,10 @@ music.artistSearch({q_artist:"prodigy",page_size:5})
 
 ```js
 
-music.artistAlbums({artist_id:1039,s_release_date:"desc",g_album_name:1})
-.then(function(data){
+music.artistAlbums({artist_id:1039, s_release_date:"desc", g_album_name:1})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -394,10 +394,10 @@ music.artistAlbums({artist_id:1039,s_release_date:"desc",g_album_name:1})
 
 ```js
 
-music.artistRelated({artist_id:56,page_size:2,page:1})
-.then(function(data){
+music.artistRelated({artist_id:56, page_size:2, page:1})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -414,9 +414,9 @@ music.artistRelated({artist_id:56,page_size:2,page:1})
 ```js
 
 music.album({album_id:14250417})
-.then(function(data){
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
@@ -437,10 +437,10 @@ music.album({album_id:14250417})
 
 ```js
 
-music.albumTracks({album_id:13750844,page:1,page_size:2})
-.then(function(data){
+music.albumTracks({album_id:13750844, page:1, page_size:2})
+	.then(function(data){
 		console.log(data);
-}).catch(function(err){
+	}).catch(function(err){
 		console.log(err);
 })
 
