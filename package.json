@@ -1,10 +1,10 @@
 {
   "name": "musicmatch",
-  "version": "0.3.2-beta.0",
+  "version": "0.3.2-beta.1",
   "description": "musicmatch api",
   "main": "./dist/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "build": "babel ./lib --out-dir ./dist"
   },
   "keywords": [
